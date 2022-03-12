@@ -1,11 +1,15 @@
 class request{
-    http = new XMLHttpRequest();
+    
 
 
     constructor(domain = ""){
         this.domain = domain;
     }
-    send (){
-        return $.getJSON(this.domain, callback);
+    async send (){
+        var resp = await fetch(this.domain);
+        if (resp.ok){
+            return (await (resp.json()));
+        }
+        
     }
 }

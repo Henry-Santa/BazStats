@@ -3,12 +3,20 @@ class bazaar{
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
 
     constructor(){
-        
+        this.baz = {};
+        this.update();
     };
-    update(params) {
-        requestt = new request(this.bazaarUrl);
-        data = requestt.send()
-        
+    update() {
+        var requestt = new request(this.bazaarUrl);
+        var data = requestt.send();
+        console.log(data);
+        this.baz = data;
     }
     
+    getSpecItem(item = ""){
+        this.baz.item;
+
+
+    }
+
 }
