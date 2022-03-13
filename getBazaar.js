@@ -24,10 +24,10 @@ class bazaar{
         return(results)
     };
 
-    Search(searchTerm){
+    async Search(searchTerm){
         var results = []
         console.log("Searching")
-        console.log(this.ITEM_LOOKUP_NAMES);
+        console.log(this.ITEM_LOOKUP_NAMES.keys());
         
         for ([key,value] of this.ITEM_LOOKUP_NAMES){
             console.log(key,value)
@@ -38,20 +38,20 @@ class bazaar{
 
 
 
-    setup(){
+    async setup(){
     
-        this.ITEM_NAMES_LOOKUP = new Map();
-        this.ITEM_LOOKUP_NAMES = new Map();
+        this.ITEM_NAMES_LOOKUP = {};
+        this.ITEM_LOOKUP_NAMES = {};
 
         var req = new request("https://api.hypixel.net/skyblock/bazaar");
         req.send().then((resp)=>{
             for (var element in resp.products) {
-                this.ITEM_NAMES_LOOKUP.set(element, this.fixName(element));
+                this.ITEM_NAMES_LOOKUP[element] = this.fixName(element);
             };
             this.fixOtherNames();
             
             for (let [key, value] of this.ITEM_NAMES_LOOKUP){
-                this.ITEM_LOOKUP_NAMES.set(value,key)
+                this.ITEM_LOOKUP_NAMES[value] = key;
             };
             
         });
