@@ -1,7 +1,4 @@
 class request{
-    
-
-
     constructor(domain = ""){
         this.domain = domain;
     }
