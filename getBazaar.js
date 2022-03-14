@@ -69,26 +69,26 @@ class bazaar{
     };
 
     fixOtherNames(){
-        this.ITEM_NAMES_LOOKUP.set('BAZAAR_COOKIE', 'Booster Cookie'); 
-        this.ITEM_NAMES_LOOKUP.set('ENCHANTED_CARROT_STICK', 'Enchanted Carrot on a Stick');
-        this.ITEM_NAMES_LOOKUP.set('HUGE_MUSHROOM_1', 'Brown Mushroom Block');
-        this.ITEM_NAMES_LOOKUP.set('HUGE_MUSHROOM_2', 'Red Mushroom Block');
-        this.ITEM_NAMES_LOOKUP.set('ENCHANTED_HUGE_MUSHROOM_1', 'Enchanted Brown Mushroom Block');
-        this.ITEM_NAMES_LOOKUP.set('ENCHANTED_HUGE_MUSHROOM_2', 'Enchanted Red Mushroom Block');
-        this.ITEM_NAMES_LOOKUP.set('SULPHUR', 'Gunpowder');
-        this.ITEM_NAMES_LOOKUP.set('RABBIT', 'Raw Rabbit');
-        this.ITEM_NAMES_LOOKUP.set('ENCHANTED_RABBIT', 'Enchanted Raw Rabbit');
-        this.ITEM_NAMES_LOOKUP.set('RAW_FISH:1', 'Raw Salmon');
-        this.ITEM_NAMES_LOOKUP.set('RAW_FISH:2', 'Clownfish');
-        this.ITEM_NAMES_LOOKUP.set('RAW_FISH:3', 'Pufferfish');
-        this.ITEM_NAMES_LOOKUP.set('INK_SACK:3', 'Cocoa Beans');
-        this.ITEM_NAMES_LOOKUP.set('INK_SACK:4', 'Lapis Lazuli');
-        this.ITEM_NAMES_LOOKUP.set('LOG', 'Oak Log');
-        this.ITEM_NAMES_LOOKUP.set('LOG:1', 'Spruce Log');
-        this.ITEM_NAMES_LOOKUP.set('LOG:2', 'Birch Log');
-        this.ITEM_NAMES_LOOKUP.set('LOG_2:1', 'Dark Oak Log');
-        this.ITEM_NAMES_LOOKUP.set('LOG_2', 'Acacia Log');
-        this.ITEM_NAMES_LOOKUP.set('LOG:3', 'Jungle Log');
+        this.ITEM_NAMES_LOOKUP['BAZAAR_COOKIE'] = 'Booster Cookie'; 
+        this.ITEM_NAMES_LOOKUP['ENCHANTED_CARROT_STICK'] = 'Enchanted Carrot on a Stick';
+        this.ITEM_NAMES_LOOKUP['HUGE_MUSHROOM_1'] = 'Brown Mushroom Block';
+        this.ITEM_NAMES_LOOKUP['HUGE_MUSHROOM_2'] = 'Red Mushroom Block';
+        this.ITEM_NAMES_LOOKUP['ENCHANTED_HUGE_MUSHROOM_1'] = 'Enchanted Brown Mushroom Block';
+        this.ITEM_NAMES_LOOKUP['ENCHANTED_HUGE_MUSHROOM_2'] = 'Enchanted Red Mushroom Block';
+        this.ITEM_NAMES_LOOKUP['SULPHUR'] = 'Gunpowder';
+        this.ITEM_NAMES_LOOKUP['RABBIT'] = 'Raw Rabbit';
+        this.ITEM_NAMES_LOOKUP['ENCHANTED_RABBIT'] = 'Enchanted Raw Rabbit';
+        this.ITEM_NAMES_LOOKUP['RAW_FISH:1'] = 'Raw Salmon';
+        this.ITEM_NAMES_LOOKUP['RAW_FISH:2'] = 'Clownfish';
+        this.ITEM_NAMES_LOOKUP['RAW_FISH:3'] = 'Pufferfish';
+        this.ITEM_NAMES_LOOKUP['INK_SACK:3'] = 'Cocoa Beans';
+        this.ITEM_NAMES_LOOKUP['INK_SACK:4'] = 'Lapis Lazuli';
+        this.ITEM_NAMES_LOOKUP['LOG'] = 'Oak Log';
+        this.ITEM_NAMES_LOOKUP['LOG:1'] = 'Spruce Log';
+        this.ITEM_NAMES_LOOKUP['LOG:2'] = 'Birch Log';
+        this.ITEM_NAMES_LOOKUP['LOG_2:1'] = 'Dark Oak Log';
+        this.ITEM_NAMES_LOOKUP['LOG_2'] = 'Acacia Log';
+        this.ITEM_NAMES_LOOKUP['LOG:3'] = 'Jungle Log';
     };
 
 
