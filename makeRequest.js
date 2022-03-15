@@ -1,3 +1,4 @@
+// basic request object
 class request{
     constructor(domain = ""){
         this.domain = domain;
@@ -7,6 +8,6 @@ class request{
         if (resp.ok){
             return (await (resp.json()));
         }
-        
+        return false
     }
 }

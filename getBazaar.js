@@ -1,29 +1,31 @@
 const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 
 class bazaar{
-
+    // the bazaar url
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
 
+    
     constructor(){
         
         this.setup()
         this.baz = {};
         this.update();
     };
+    // updates data
     update() {
         var requestt = new request(this.bazaarUrl);
         var data = requestt.send();
         this.baz = data;
         console.log(this.ITEM_LOOKUP_NAMES, this.ITEM_NAMES_LOOKUP);
     };
-    
+    // gets data on item
     async getSpecItem(item = ""){
         console.log("Stuff")
         var results = this.Search(item)
         console.log(results)
         return(results)
     };
-
+    // searches the dictionarys and finds items that match a search term
     async Search(searchTerm){
         var results = []
         console.log("Searching")
