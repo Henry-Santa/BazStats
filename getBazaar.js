@@ -3,7 +3,8 @@ const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 class bazaar{
     // the bazaar url
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
-
+    RealName = [];
+    viewingName = [];
     
     constructor(){
         
@@ -29,7 +30,7 @@ class bazaar{
     async Search(searchTerm){
         var results = []
         console.log("Searching")
-        console.log(this.ITEM_LOOKUP_NAMES.keys());
+        console.log(Object.keys(this.ITEM_LOOKUP_NAMES));
         
         for ([key,value] of this.ITEM_LOOKUP_NAMES){
             console.log(key,value)
