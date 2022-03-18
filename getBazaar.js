@@ -3,6 +3,7 @@ const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 class bazaar{
     // the bazaar url
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
+    ALL_TERMS = [];
     ITEM_LOOKUP_NAMES = {};
     ITEM_NAMES_LOOKUP = {};
     constructor(){
@@ -30,11 +31,14 @@ class bazaar{
         var results = []
         var waitForStoof = await this.setup()
         console.log("Searching")
-        console.log(this.ITEM_LOOKUP_NAMES)
-        console.log(Object.keys(this.ITEM_LOOKUP_NAMES));
+        this.getConstants()
+        console.log(this.ITEM_NAMES_LOOKUP)
         
-        for ([key,value] of this.ITEM_LOOKUP_NAMES){
-            console.log(key,value)
+        console.log(this.ALL_TERMS);
+        console.log(this.ALL_TERMS.length) // WHY DOES THIS LOG 0???!??!?!?!/1/1
+        for (var key=0; key < this.ALL_TERMS.length; key++){
+            console.log(this.ALL_TERMS[key], this.ITEM_NAMES_LOOKUP[this.ALL_TERMS[key]])
+            console.log("e")
         };
         return (results)
     }
@@ -51,12 +55,9 @@ class bazaar{
         req.send().then((resp)=>{
             for (var element in resp.products) {
                 this.ITEM_NAMES_LOOKUP[element] = this.fixName(element);
+                this.ALL_TERMS.push(element);
             };
             this.fixOtherNames();
-            
-            for (let [key, value] of this.ITEM_NAMES_LOOKUP){
-                this.ITEM_LOOKUP_NAMES[value] = key;
-            };
             
         });
     };
