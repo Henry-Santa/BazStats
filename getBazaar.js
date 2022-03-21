@@ -35,7 +35,7 @@ class bazaar{
         console.log(this.ITEM_NAMES_LOOKUP)
         
         console.log(this.ALL_TERMS);
-        console.log(this.ALL_TERMS.entries()) // WHY DOES THIS LOG 0???!??!?!?!/1/1
+        console.log(this.ALL_TERMS.entries()) // WHY DOES THIS LOG 0???!??!?!?!
         for (var key=0; key < this.ALL_TERMS.length; key++){
             console.log(this.ALL_TERMS[key], this.ITEM_NAMES_LOOKUP[this.ALL_TERMS[key]])
             console.log("e")
