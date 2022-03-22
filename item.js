@@ -1,8 +1,7 @@
 class item{
-    constructor(name = "", dispName = "", family = new family("", []), stats = {}){
+    constructor(name = "", dispName = "", stats = {}){
         this.dispName = dispName;
         this.name = name;
-        this.family = family;
         this.stats = stats;
     };
 
