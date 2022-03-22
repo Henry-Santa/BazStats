@@ -23,7 +23,6 @@ class bazaar{
         for (var element in resp.products) {
             this.itemList.push(new item(element,this.fixName(element),resp.products[element]))
         };
-        console.log(this.itemList)
     };
 
     fixName(element = ""){
@@ -63,7 +62,7 @@ class bazaar{
     searchItems(searchTerm = ""){
         var results = []
         for(let i in this.itemList){
-            if (this.itemList[i].dispName.includes(searchTerm)){
+            if (this.itemList[i].dispName.toLowerCase().includes(searchTerm.toLowerCase())){
                 results.push(this.itemList[i])
             }
         }
