@@ -3,9 +3,6 @@ const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 class bazaar{
     // the bazaar url
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
-    ALL_TERMS = [];
-    ITEM_LOOKUP_NAMES = {};
-    ITEM_NAMES_LOOKUP = {};
     constructor(){
         
         this.setup();
@@ -20,32 +17,6 @@ class bazaar{
         console.log(this.ITEM_LOOKUP_NAMES, this.ITEM_NAMES_LOOKUP);
     };
     // gets data on item
-    async getSpecItem(item = ""){
-        console.log("Stuff")
-        var results = this.Search(item)
-        console.log(results)
-        return(results)
-    };
-    // searches the dictionarys and finds items that match a search term
-    async Search(searchTerm){
-        var results = []
-        var waitForStoof = await this.setup()
-        console.log("Searching")
-        this.getConstants()
-        console.log(this.ITEM_NAMES_LOOKUP)
-        
-        console.log(this.ALL_TERMS);
-        console.log(this.ALL_TERMS.entries()) // WHY DOES THIS LOG 0???!??!?!?!
-        for (var key=0; key < this.ALL_TERMS.length; key++){
-            console.log(this.ALL_TERMS[key], this.ITEM_NAMES_LOOKUP[this.ALL_TERMS[key]])
-            console.log("e")
-        };
-        return (results)
-    }
-
-
-
-
     async setup(){
     
         this.ITEM_NAMES_LOOKUP = {};
@@ -62,6 +33,8 @@ class bazaar{
         });
     };
 
+
+    
     getConstants(){
         console.log(this.ITEM_LOOKUP_NAMES, this.ITEM_NAMES_LOOKUP)
         return [this.ITEM_LOOKUP_NAMES, this.ITEM_NAMES_LOOKUP]
