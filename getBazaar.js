@@ -10,15 +10,7 @@ class bazaar{
     // the bazaar url
     bazaarUrl = "https://api.hypixel.net/skyblock/bazaar";
     constructor(){
-        this.baz = {};
         
-    };
-    // updates data
-    update() {
-        var requestt = new request(this.bazaarUrl);
-        var data = requestt.send();
-        this.baz = data;
-        console.log(this.ITEM_LOOKUP_NAMES, this.ITEM_NAMES_LOOKUP);
     };
     // gets data on item
     async setup(){
@@ -32,7 +24,6 @@ class bazaar{
             this.itemList.push(new item(element,this.fixName(element),resp.products[element]))
         };
         console.log(this.itemList)
-        this.update();
     };
 
     fixName(element = ""){
