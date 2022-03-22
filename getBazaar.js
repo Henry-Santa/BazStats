@@ -55,6 +55,7 @@ class bazaar{
         this.dicto['LOG_2:1'] = 'Dark Oak Log';
         this.dicto['LOG_2'] = 'Acacia Log';
         this.dicto['LOG:3'] = 'Jungle Log';
+        this.dicto['CARROT_ITEM'] = 'Carrot';
     };
 
 

@@ -6,18 +6,18 @@ async function setup() {
 }
 setup();
 var currResults = []
-const elem = document.getElementById("search")
-const listHead = document.getElementById("myUL")
-var ogSearch = true
+const elem = document.getElementById("search");
+const listHead = document.getElementById("myUL");
+var ogSearch = true;
 
 async function search(){
     for (idx in currResults){
-        currResults[idx].remove()
+        currResults[idx].remove();
     }
     let results = []
     if (ogSearch){
-        results = myBaz.searchItems(" ")
-        ogSearch = false
+        results = myBaz.searchItems(" ");
+        ogSearch = false;
     }else{
         results = myBaz.searchItems(elem.value);
     }
@@ -27,5 +27,16 @@ async function search(){
         listHead.appendChild(newLi);
         currResults.push(newLi);
     }
-    console.log(results);
 };
+
+
+window.onclick = e => {
+    if (e.target.tagName === "LI"){
+        for (i in currResults){
+            if (myBaz.itemList[i].dispName == e.target.innerHTML){
+                
+                break;
+            }
+        }
+    }
+}
