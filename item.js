@@ -6,6 +6,8 @@ class item{
     };
 
     getStats(){
-        return this.stats
+        let truStats = this.stats["quick_status"]
+        let returnedStats = [this.stats["sell_summary"][0]["pricePerUnit"],truStats["sellPrice"],truStats["sellVolume"],this.stats["buy_summary"][0]["pricePerUnit"],truStats["buyPrice"],truStats["buyVolume"]]
+        return returnedStats
     }
 }

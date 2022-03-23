@@ -8,7 +8,17 @@
     <title>Baz Stats</title>
 </head>
 <body id="body">
-    <input type="text" id="search" onkeyup="search()" placeholder="Search for items..">
+    <div id="searchDiv">
+        <div id="moveSwitch">
+            <label class="switch">
+                
+                <input id="lock" type="checkbox">
+                <span class="slider"></span>
+                <label id="LockLable">Lock Data Tables</label>
+            </label>
+        </div>
+        <input type="text" id="search" onkeyup="search()" placeholder="Search for items..">
+    </div>
     
     <ul id="myUL">
         
