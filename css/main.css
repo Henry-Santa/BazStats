@@ -101,8 +101,11 @@ table {
     position: absolute;
     z-index: 1500;
     color: salmon;
-    left : 75%;
-    width: 100px;
+    left : -400%;
+    width: 250px;
+    top: 20%;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #moveSwitch {
     position: absolute;
@@ -129,7 +132,7 @@ table {
 .slider {
     position: absolute;
     cursor: pointer;
-    padding: 20px 20px 20px 3%;
+    padding: 20px 20px 20px 20px;
     top: 0;
     left: 0;
     right: 0;
