@@ -14,6 +14,9 @@ var currResults = []
 const elem = document.getElementById("search");
 const listHead = document.getElementById("myUL");
 var ogSearch = true;
+var lockSwitch = document.getElementById("lock")
+var openedItems = []
+var oldClicks = []
 
 async function search(){
     for (idx in currResults){
@@ -26,39 +29,78 @@ async function search(){
     }else{
         results = myBaz.searchItems(elem.value);
     }
+    if (oldClicks.length !== 0  && !lockSwitch.checked){
+        for(index in oldClicks){
+            oldClicks[index]["element"].innerHTML = oldClicks[index]["dispName"]
+            oldClicks[index]["element"].id = "";
+        }
+        oldClicks = []
+    }
     for (idx in results){
         let newLi = document.createElement("li");
         newLi.textContent = results[idx].dispName;
+        newLi.id = results[idx].dispName;
         listHead.appendChild(newLi);
         currResults.push(newLi);
     }
+    for(i in currResults){
+        
+        if (openedItems.includes(currResults[i].id)){
+            currResults[i].className = "selected";
+            let newClick = {}
+            newClick["element"] = currResults[i];
+            newClick["dispName"] = newClick["element"].id;
+            oldClicks.push(newClick)
+            let stats = myBaz.getItem(newClick["element"].id).getStats();
+            newClick["element"].innerHTML = newClick["element"].innerHTML + tableText
+            let dataRow = newClick["element"].children[0].children[0].children[1];
+            let childs = dataRow.children;
+            for (i in childs){
+                childs[i].innerHTML = stats[i];
+            }
+            openedItems.push(newClick["dispName"]);
+            dataRow.id = "";
+        }
+        
+    }
 };
 
-var oldClick = {}
 
 window.onclick = e => {
     
     if (e.target.tagName === "LI"){
-        if (Object.keys(oldClick).length !== 0){
-            oldClick["element"].innerHTML = oldClick["dispName"]
-            oldClick["element"].id = "";
+        if (oldClicks.length !== 0  && !lockSwitch.checked){
+            for(index in oldClicks){
+                oldClicks[index]["element"].innerHTML = oldClicks[index]["dispName"]
+                oldClicks[index]["element"].id = "";
+                oldClicks[index]["element"].className = "";
+            }
+            oldClicks = []
+            
+        } if (!lockSwitch.checked){
+            openedItems = []
         }
         for (i in currResults){
             if (myBaz.itemList[i].dispName == e.target.innerHTML){
-                oldClick["element"] = e.target;
-                oldClick["dispName"] = myBaz.itemList[i].dispName;
+                e.target.className = "selected";
+                let newClick = {};
+                newClick["element"] = e.target;
+                newClick["dispName"] = myBaz.itemList[i].dispName;
+                oldClicks.push(newClick)
                 let stats = myBaz.itemList[i].getStats();
-                console.log(tableText)
                 e.target.innerHTML = e.target.innerHTML + tableText
                 let dataRow = document.getElementById("data")
-                console.log(dataRow)
                 let childs = dataRow.children;
-                e.target.id = "selected"
                 for (i in childs){
-                    childs[i].innerHTML = stats[i]
+                    childs[i].innerHTML = stats[i];
                 }
+                openedItems.push(newClick["dispName"]);
+                dataRow.id = "";
                 break;
             }
         }
+    } else if(e.target.id === "lock" && !lockSwitch.checked){
+        openedItems = []
+        search()
     }
 }

@@ -70,5 +70,14 @@ class bazaar{
         return results;
     }
 
-
+    getItem(dispName = ""){
+        let item;
+        for(i in this.itemList){
+            if(this.itemList[i].dispName === dispName){
+                item = this.itemList[i];
+                break;
+            }
+        }
+        return item;
+    }
 };
