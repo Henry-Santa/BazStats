@@ -7,7 +7,7 @@ class item{
 
     getStats(){
         let truStats = this.stats["quick_status"]
-        let returnedStats = [this.stats["buy_summary"][0]["pricePerUnit"],this.stats["sell_summary"][0]["pricePerUnit"],truStats["buyPrice"],truStats["sellPrice"],truStats["buyVolume"],truStats["sellVolume"]]
+        let returnedStats = [this.stats["buy_summary"][0]["pricePerUnit"],this.stats["sell_summary"][0]["pricePerUnit"],Math.round(truStats["buyPrice"]*10) / 10,Math.round(truStats["sellPrice"]*10) / 10,truStats["buyVolume"],truStats["sellVolume"]]
         return returnedStats
     }
 }
