@@ -137,7 +137,7 @@ table {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: salmon;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -155,7 +155,7 @@ table {
 }
 
 input:checked + .slider {
-    background-color: salmon;
+    background-color: #94e267;
 }
 
 input:focus + .slider {
